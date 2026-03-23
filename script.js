@@ -3,22 +3,38 @@
  *  Versiune completă, stabilă + FUNNY LINES
  ******************************/
 
-const socket = new WebSocket("ws://localhost:21213/");
+// -----------------------------
+// WebSocket IndoFinity
+// -----------------------------
+const socket = new WebSocket("ws://localhost:62024");
 
-socket.onopen = () => console.log("Conectat la TikFinity WebSocket");
+socket.onopen = () => {
+    console.log("Conectat la IndoFinity WebSocket!");
+};
 
 socket.onmessage = (event) => {
     try {
-        const json = JSON.parse(event.data);
+        const packet = JSON.parse(event.data);
 
-        if (json.event === "chat") {
-            const message = json.data.comment || "";
-            const username = json.data.nickname || json.data.uniqueId || "Anonim";
+        if (packet.event === "chat") {
 
-            onChatMessage(username, message);
+            const user =
+                packet.data.nickname ||
+                packet.data.uniqueId ||
+                packet.data.displayName ||
+                packet.data.username ||
+                "necunoscut";
+
+            const message = packet.data.comment || "";
+
+            console.log("CHAT:", user, message);
+
+            // Trimitem mesajul către joc
+            onChatMessage(user, message);
         }
-    } catch (e) {
-        console.log("Eroare JSON:", e);
+
+    } catch (err) {
+        console.log("Eroare IndoFinity JSON:", err);
     }
 };
 
