@@ -46,7 +46,7 @@ socket.onmessage = (event) => {
 const funnyStart = [
     "Hai că începe circul, luați popcorn!",
     "Runda nouă, nervi noi.",
-    "Capo a dat drumul la joacă, pregătiți-vă!",
+    "MASK a dat drumul la joacă, pregătiți-vă!",
     "Să vedem cine e treaz și cine doar respiră.",
     "Atenție, începe haosul controlat.",
     "Cine dă primul cuvânt? Cine are curaj?",
@@ -54,7 +54,7 @@ const funnyStart = [
     "Runda asta promite… sau poate nu.",
     "Să înceapă dansul literelor!",
     "Cine rupe jocul primul?",
-    "Capo vă privește… fără presiune.",
+    "MASK vă privește… fără presiune.",
     "Atenție, începe distracția… sau tragedia."
 ];
 
@@ -82,7 +82,7 @@ const funnyWinner = [
     "Așa se face, luați notițe!",
     "A închis runda cu stil.",
     "Și cu asta… s-a zis runda.",
-    "Capo approves.",
+    "MASK approves.",
     "A dat cuvântul final, literalmente.",
     "Așa se joacă FAZAN, oameni buni.",
     "Runda s-a predat singură.",
